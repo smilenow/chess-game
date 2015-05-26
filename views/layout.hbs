@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link rel='stylesheet' href="/stylesheets/font-awesome.min.css" />
+    <link rel='stylesheet' href="/stylesheets/chessboard-0.3.0.min.css" />
+    <link rel='stylesheet' href="/stylesheets/messenger.css" />
+    <link rel='stylesheet' href="/stylesheets/messenger-spinner.css" />
+    <link rel='stylesheet' href="/stylesheets/messenger-theme-future.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+
+                <li class="{{#if isHomePage}} active {{/if}}">
+                    <a href="/" title="Goto Home Page">
+                        <i class="fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="{{#if isPlayPage}} active {{/if}}">
+                    <a href="/play" title="Create New Game">
+                        <i class="fa fa-gamepad"></i>
+                        Play
+                    </a>
+                </li>
+
+                {{#if user}}
+                    <li class="{{#if isAccountPage}} active {{/if}}">
+                        <a href="/account" title="My account">
+                            <span id="loggedUser" data-user="{{#user}} {{user_name}} {{/user}}"></span>
+                            <i class="fa fa-user"></i>
+                                {{#user}} {{user_name}} {{/user}}
+                        </a>
+                    </li>
+                <li>
+                    <a href="/logout" title="Sign out">
+                        <i class="fa fa-sign-out"></i>
+                        Sign out
+                    </a>
+                </li>
+                {{else}}
+                <li class="{{#if isLoginPage}} active {{/if}}">
+                    <a href="/login">
+                        <i class="fa fa-sign-in"></i>
+                        Sign in
+                    </a>
+                </li>
+                {{/if}}
+            </ul>
+            <h3>Chess Game</h3>
+        </div>
+
+        <div class="content">
+            {{{body}}}
+        </div>
+
+        <div class="footer col-md-3 col-md-offset-5">
+            <p>SmilENow Chess Game. </p>
+        </div>
+
+    </div>
+
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script type="text/javascript" src="/javascripts/jquery-2.1.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/chessboard-0.3.0.min.js"></script>
+    <script type="text/javascript" src="/javascripts/messenger.min.js"></script>
+    <script type="text/javascript" src="/javascripts/messenger-theme-future.js"></script>
+    <script type="text/javascript" src="/javascripts/chess.js"></script>
+    <script type="text/javascript" src="/javascripts/chessgame.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Create a new game
+                </h3>
+            </div>
+            <form id="NewGameForm" method="post" action="/play">
+                <div class="panel-body">
+                    <div class="panel-group">
+                        <label>
+                            Choose your role
+                        </label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="role" value="white" checked>
+                                white
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="role" value="black" checked>
+                                black
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-default center-block">
+                        Play
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
