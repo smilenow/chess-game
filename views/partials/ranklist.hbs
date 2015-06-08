@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">RankList</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>用户名</th>
+                            <th>累计获胜场次</th>
+                            <th>获胜比例</th>
+                            <th>累计获胜时长</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranklist_form">
+                        {{#result}}
+                        <tr>
+                            <th>{{rk}}</th>
+                            <th>{{user_name}}</th>
+                            <th>{{win_num}}</th>
+                            <th>{{win_ratio}}</th>
+                            <th>{{win_time}}</th>
+                        </tr>
+                        {{/result}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                备注：该排名最多显示前20名
+            </div>
+        </div>
+    </div>
+</div>

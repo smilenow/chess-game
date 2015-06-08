@@ -24,6 +24,18 @@ router.get('/',function(req,res){
     });
 });
 
+router.get('/game/:token/:role', function(req, res) {
+    var token = req.params.token;
+    var role = req.params.role;
+    res.render('partials/game', {
+        title: 'Chess Game - ' + token,
+        user: req.user,
+        isPlayPage: true,
+        token: token,
+        role: role
+    });
+});
+
 router.get('/logout', function(req, res) {
     req.logout();
     req.flash('logoutSuccess', 'You have been successfully logged out');

@@ -30,7 +30,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -48,12 +48,16 @@ var account = require('./routes/account');
 var login = require('./routes/login');
 var play = require('./routes/play');
 var register = require('./routes/register');
+var api = require('./routes/api');
+var ranklist = require('./routes/ranklist');
 
 app.use('/',routes);
 app.use('/account', account);
 app.use('/login',login);
 app.use('/play',play);
 app.use('/register',register);
+app.use('/api', api);
+app.use('/ranklist', ranklist);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -69,7 +73,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development' || app.get('env') === 'default') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('partials/error', {
             message: err.message,
             error: err
         });
@@ -88,6 +92,6 @@ app.use(function(err, req, res, next) {
 
 // launch app server
 var server = require('http').createServer(app).listen(3333);
-require('./config/socketio.js')(server);
+require('./config/socket.js')(server);
 
 module.exports = app;

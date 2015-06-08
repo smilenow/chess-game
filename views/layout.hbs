@@ -8,8 +8,8 @@
     <link rel='stylesheet' href="/stylesheets/font-awesome.min.css" />
     <link rel='stylesheet' href="/stylesheets/chessboard-0.3.0.min.css" />
     <link rel='stylesheet' href="/stylesheets/messenger.css" />
-    <link rel='stylesheet' href="/stylesheets/messenger-spinner.css" />
     <link rel='stylesheet' href="/stylesheets/messenger-theme-future.css" />
+    <link rel='stylesheet' href="/stylesheets/messenger-theme-air.css" />
 </head>
 
 <body>
@@ -27,6 +27,12 @@
                     <a href="/play" title="Create New Game">
                         <i class="fa fa-gamepad"></i>
                         Play
+                    </a>
+                </li>
+                <li class="{{#if isRankListPage}} active {{/if}}">
+                    <a href="/ranklist" title="Goto RankList Page">
+                        <i class="fa fa-list"></i>
+                        RankList
                     </a>
                 </li>
 
@@ -73,7 +79,8 @@
     <script type="text/javascript" src="/javascripts/chessboard-0.3.0.min.js"></script>
     <script type="text/javascript" src="/javascripts/messenger.min.js"></script>
     <script type="text/javascript" src="/javascripts/messenger-theme-future.js"></script>
-    <script type="text/javascript" src="/javascripts/chess.js"></script>
+    <script type="text/javascript" src="/javascripts/messenger-theme-flat.js"></script>
+    <script type="text/javascript" src="/javascripts/chess.min.js"></script>
     <script type="text/javascript" src="/javascripts/chessgame.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </body>
