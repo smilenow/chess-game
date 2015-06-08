@@ -211,7 +211,7 @@ var Chess = function(fen){
         board = new Array(128);
         kings = {w:EMPTY, b:EMPTY};
         turn = WHITE;
-        castling = {w:0,b:0};
+        castling = {w:'',b:''};
         ep_square = EMPTY;
         half_moves = 0;
         move_number = 1;
@@ -306,7 +306,7 @@ var Chess = function(fen){
         if (!validate_fen(fen).valid) return false;
         clear();
 
-        for (var i = 0; i<position.length(); i++){
+        for (var i = 0; i<position.length; i++){
             var piece = position.charAt(i);
             if (piece=='/') square += 8;
             else if (is_digit(piece)) square += parseInt(piece,10);
@@ -1212,7 +1212,7 @@ var Chess = function(fen){
             return pretty_move;
         },
 
-        ndo: function() {
+        undo: function() {
             var move = undo_move();
             return (move) ? make_pretty(move) : null;
         },

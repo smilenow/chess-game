@@ -34,6 +34,7 @@ router.get('/',function(req,res){
             ret.sort(sortfunc('win_num','win_ratio','win_time'));
             for (var i in ret){
                 cnt++;
+                if (cnt === 21) break;
                 ret[i].rk = cnt;
             }
             res.render('partials/ranklist', {
