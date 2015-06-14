@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // when sign in, keep the user information for several minutes.
     var username;
-    var time_out = 180; // 3 mins
+    var time_out = 1800; // 30 mins
     if ($("#loggedUser").length) {
         username = $("#loggedUser").data("user");
     } else {
